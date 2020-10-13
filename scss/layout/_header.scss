@@ -1,0 +1,97 @@
+.header{
+    position: relative;
+    z-index: 1;
+    p, a {
+        color: $white;
+    }
+    &__wrapper {
+        background: $black;
+        padding: 20px 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    &__logo {
+        display: block;
+        text-align: left;
+        a {
+            display: inline-block;
+        }
+        img {
+            margin: 0;
+        }
+    }
+    &__nav {
+        a {
+            color: $white;
+        }
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        &__item {
+            color: $white;
+		    @include font-size(16px);
+		    @include line-height(20px);
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        p, [class^="icon-"], [class*=" icon-"] {
+            color: $white;
+        }
+        p {
+            @include font-size(16px);
+            @include line-height(20px);
+        }
+        [class^="icon-"], [class*=" icon-"] {
+            @include font-size(20px);
+            @include line-height(20px);
+            color: $accent-1;
+            margin-right: 10px;
+        }
+    }
+	@include screen('med') {
+        &__wrapper {
+        }
+        &__logo {
+            margin-bottom: 20px;
+            a {
+                display: block;
+            }
+            img {
+                margin: 0 auto;
+                max-width: 130px;
+            }
+        }
+        &__nav{
+            &__list {
+                justify-content: center;
+            }
+        }
+        &__contact{
+            justify-content: center;
+        }
+	}
+	@include screen('small') {
+        &__wrapper {
+            background: $black;
+            position: relative;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calendar Bot</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  
+  <div class="calendar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-2 calendar__sidebar__wrapper">
+          <div class="calendar__sidebar__logo">
+            <a href="/" title="Home">
+              <img src="./img/logo.png" class="img-responsive" alt="Logo" width="160">
+            </a>
+          </div>
+          <div class="calendar__sidebar">
+            <div id='calendar-month'></div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-10 calendar__content__wrapper">
+          <div class="calendar__content">
+            <div id='calendar'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="js/vendor/jquery-3.4.1.min.js"></script> -->
+  <script src="js/vendor/moment.min.js"></script>
+  <script src="js/vendor/fullcalendar.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

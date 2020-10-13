@@ -1,0 +1,136 @@
+.calendar {
+    &__sidebar{
+        &__wrapper {
+        }
+        &__logo {
+            padding: 4px;
+            img {
+                @include transition();
+            }
+        }
+        
+        .fc {
+            @include font-size(14px);
+            padding: 14px;
+            .fc-toolbar.fc-header-toolbar {
+                margin: 0;
+                @include font-size(12px);
+            }
+            &-day {
+                &-past {
+                    background: rgba($grey, 0.5);
+                }
+            }
+            &-daygrid{
+                &-day{
+                    &-events {
+                        display: none;
+                    }
+                    &-top {
+                        cursor: pointer;
+                        text-align: center;
+                        > a {
+                            width: 100%;
+                            padding: 10px 4px;
+                        }
+                    }
+                }
+            }
+            &-header {
+                &-toolbar {
+                    .fc-button-primary {
+                        background: transparent;
+                        color: $text;
+                        border-color: transparent;
+                        border-radius: 40px !important;
+                        @include transition();
+                        &:hover {
+                            background-color: rgba($grey, 0.5);
+                        }
+                        &:active {
+                            background: transparent;
+                            color: $text;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            &-scrollgrid,
+            td,
+            th {
+                border: 0;
+            }
+            
+        }
+    }
+    &__content {
+        
+        .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+            margin-left: 30px;
+        }
+        .fc {
+            border-left: 2px solid $grey;
+            .fc-toolbar.fc-header-toolbar {
+                margin: 0;
+                padding: 10px 20px;
+                border-bottom: 2px solid $grey;
+            }
+            &-scrollgrid {
+                border: 0;
+            }
+
+            &-header {
+                &-toolbar {
+                    .fc-toolbar-chunk {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+            &-day {
+                &-past {
+                    background: rgba($grey, 0.5);
+                }
+            }
+        }
+    }
+	@include screen('small') {
+        &__sidebar {
+            display: none;
+            &__logo {
+                img {
+                    max-width: 120px;
+                }
+            }
+        }
+        &__content{
+            .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+                margin-left: 15px;
+            }
+            .fc {
+                .fc-toolbar.fc-header-toolbar {
+                    flex-wrap: wrap;
+                }
+                border-left: 0;
+                border-top: 2px solid $grey;
+                @include font-size(14px);
+                &-toolbar{
+                    &-title {
+                        @include font-size(18px);
+                    }
+                }
+                &-header {
+                    &-toolbar {
+                        .fc-toolbar-chunk {
+                            width: 100%;
+                        }
+                    }
+                }
+                &-scrollgrid {
+                    border-left: 1px solid var(--fc-border-color, #ddd);
+                }
+            }
+        }
+	}
+}
